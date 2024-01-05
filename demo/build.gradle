@@ -1,4 +1,24 @@
 //add everything here
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'stage2-build-tools-gradle'
+            artifactId = 'demo'
+            version = '1.0.0'
+
+            from components.java
+        }
+    }
+}
 
 test {
     useJUnitPlatform()
